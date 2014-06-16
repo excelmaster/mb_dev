@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.invent_mbdb.data.AdminRedir" table="admin_redir" catalog="invent_mb" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="grupo" type="integer">
+            <column name="grupo"/>
+        </property>
+        <property name="nameSitio" type="string">
+            <column name="name_sitio" length="200"/>
+        </property>
+        <property name="linkSitio" type="string">
+            <column name="link_sitio" length="200"/>
+        </property>
+        <property name="imgSitio" type="string">
+            <column name="img_sitio" length="200"/>
+        </property>
+        <property name="page" type="string">
+            <column name="page" length="200"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="invent_mbDB" class="com.invent_mbdb.Invent_mbDB" CRUDService="true" type="DataService" springFile="invent_mbDB.spring.xml">
+    <operation operationType="hqlquery" name="getUsersById">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.invent_mbdb.data.Users" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.invent_mbdb.data.AdminRedir" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="grupo" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="nameSitio" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="linkSitio" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="imgSitio" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="page" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.invent_mbdb.data.Users" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="prinombre" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="demasnombres" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="priapellido" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segapellido" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="cargo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="rol" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

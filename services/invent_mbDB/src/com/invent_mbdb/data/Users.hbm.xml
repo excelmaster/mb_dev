@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.invent_mbdb.data.Users" table="users" catalog="invent_mb" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="prinombre" type="string">
+            <column name="prinombre" length="100" not-null="true"/>
+        </property>
+        <property name="demasnombres" type="string">
+            <column name="demasnombres" length="100"/>
+        </property>
+        <property name="priapellido" type="string">
+            <column name="priapellido" length="100" not-null="true"/>
+        </property>
+        <property name="segapellido" type="string">
+            <column name="segapellido" length="100"/>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="100" not-null="true"/>
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="100" not-null="true"/>
+        </property>
+        <property name="cargo" type="string">
+            <column name="cargo" length="100" not-null="true"/>
+        </property>
+        <property name="rol" type="integer">
+            <column name="rol" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
