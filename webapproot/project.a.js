@@ -507,7 +507,7 @@ dojo.declare("mb_dev", wm.Application, {
 	"name": "", 
 	"phoneGapLoginPage": "Login", 
 	"phoneMain": "", 
-	"projectSubVersion": "Alpha1", 
+	"projectSubVersion": "Alpha3", 
 	"projectVersion": 1, 
 	"sessionExpirationHandler": undefined, 
 	"studioVersion": "6.6.0M2", 
