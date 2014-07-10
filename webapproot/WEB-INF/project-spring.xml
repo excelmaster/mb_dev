@@ -12,7 +12,7 @@ and is an ideal location for end-users to put any code they need.
 			http://www.springframework.org/schema/aop
 			http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
             
-        <bean id="sampledataDBInitializer" 
+        <!-- bean id="sampledataDBInitializer" 
         class="org.springframework.jdbc.datasource.init.DataSourceInitializer"
         depends-on="invent_mbDBSessionFactory">
             <property name="dataSource" ref="invent_mbDBDataSource"/>
@@ -22,6 +22,6 @@ and is an ideal location for end-users to put any code they need.
         		<property name="continueOnError" value="true"/>
         	</bean>
         	</property>
-        </bean>    
+        </bean-->    
             
 </beans>

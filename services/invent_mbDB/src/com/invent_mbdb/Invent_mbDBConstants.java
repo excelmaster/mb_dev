@@ -5,7 +5,7 @@ package com.invent_mbdb;
 
 /**
  *  Query names for service "invent_mbDB"
- *  06/16/2014 12:50:58
+ *  07/09/2014 09:57:10
  * 
  */
 public class Invent_mbDBConstants {
