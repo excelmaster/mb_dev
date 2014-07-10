@@ -13,5 +13,8 @@ dojo.declare("Usuarios", wm.Page, {
     usersNewButtonClick1: function(inSender) {
         this.usersDialog.
     },
+    usersDojoGridPrinombreFormat: function( inValue, rowId, cellId, cellField, cellObj, rowObj) {
+        
+    },
     _end: 0
 });

@@ -10,6 +10,8 @@ this.cargoEditor1.caption=this.securityService_getUserNameSVar;
 usersNewButtonClick1: function(inSender) {
 this.usersDialog.
 },
+usersDojoGridPrinombreFormat: function( inValue, rowId, cellId, cellField, cellObj, rowObj) {
+},
 _end: 0
 });
 
@@ -82,7 +84,7 @@ wire: ["wm.Wire", {"expression":"\"Menu_Admin\"","targetProperty":"pageName"}, {
 }],
 usersDialog: ["wm.DesignableDialog", {"buttonBarId":"buttonBar","containerWidgetId":"containerWidget","desktopHeight":"314px","height":"314px","styles":{},"title":"users","width":"500px"}, {"onShow":"usersDialogShow"}, {
 containerWidget: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
-usersLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"244px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onSuccess":"usersLivePanel2.popupLiveFormSuccess"}, {
+usersLiveForm1: ["wm.LiveForm", {"alwaysPopulateEditors":true,"fitToContentHeight":true,"height":"325px","horizontalAlign":"left","liveEditing":false,"margin":"4","verticalAlign":"top"}, {"onSuccess":"usersLivePanel2.popupLiveFormSuccess"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"usersDojoGrid.selectedItem","targetProperty":"dataSet"}, {}]
 }],
@@ -97,7 +99,7 @@ cargoEditor1: ["wm.Text", {"caption":"Cargo","captionSize":"140px","changeOnKey"
 rolEditor1: ["wm.Number", {"borderColor":"#FBFBFB","caption":"Rol","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"rol","height":"26px","required":true,"width":"100%"}, {}]
 }]
 }],
-buttonBar: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#333333","desktopHeight":"33px","height":"33px"}, {}, {
+buttonBar: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#333333","desktopHeight":"41px","height":"33px","mobileHeight":"41px"}, {}, {
 usersSaveButton: ["wm.Button", {"caption":"Guardar","margin":"4"}, {"onclick":"usersLiveForm1.saveDataIfValid"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"source":"usersLiveForm1.invalid","targetId":null,"targetProperty":"disabled"}, {}]
@@ -135,8 +137,8 @@ wire2: ["wm.Wire", {"source":"usersDojoGrid","targetId":null,"targetProperty":"d
 wire3: ["wm.Wire", {"source":"usersSaveButton","targetId":null,"targetProperty":"saveButton"}, {}]
 }],
 usersDojoGrid: ["wm.DojoGrid", {"columns":[
-{"show":true,"field":"id","title":"Id","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
-{"show":true,"field":"prinombre","title":"Prinombre","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"id","title":"Id","width":"80px","align":"right","expression":"Primer nombre","mobileColumn":false},
+{"show":true,"field":"prinombre","title":"Prinombre","width":"100%","align":"left","formatFunc":"usersDojoGridPrinombreFormat","expression":"\"Primer nombre\"","mobileColumn":false},
 {"show":true,"field":"demasnombres","title":"Demasnombres","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"priapellido","title":"Priapellido","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"segapellido","title":"Segapellido","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
@@ -144,7 +146,7 @@ usersDojoGrid: ["wm.DojoGrid", {"columns":[
 {"show":true,"field":"password","title":"Password","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"cargo","title":"Cargo","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"rol","title":"Rol","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Id: \" + ${id} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Prinombre: \" + ${prinombre}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Demasnombres: \" + ${demasnombres}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Priapellido: \" + ${priapellido}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Segapellido: \" + ${segapellido}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Username: \" + ${username}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Password: \" + ${password}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Cargo: \" + ${cargo}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Rol: \" + ${rol}\n + \"</div>\"\n\n","mobileColumn":true}
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Id: \" + ${wm.runtimeId}.formatCell(\"id\", ${id}, ${this}, ${wm.rowId}) +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Prinombre: \" + ${wm.runtimeId}.formatCell(\"prinombre\", ${prinombre}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Demasnombres: \" + ${demasnombres}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Priapellido: \" + ${priapellido}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Segapellido: \" + ${segapellido}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Username: \" + ${username}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Password: \" + ${password}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Cargo: \" + ${cargo}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Rol: \" + ${rol}\n + \"</div>\"\n\n","mobileColumn":true}
 ],"height":"100%","localizationStructure":{},"margin":"4","minDesktopHeight":60}, {"onCellDblClick":"usersLivePanel2.popupLivePanelEdit"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"usersLiveVariable2","targetProperty":"dataSet"}, {}]
