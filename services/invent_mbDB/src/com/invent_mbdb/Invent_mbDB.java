@@ -14,7 +14,7 @@ import com.wavemaker.runtime.service.TypedServiceReturn;
 
 /**
  *  Operations for service "invent_mbDB"
- *  07/09/2014 09:57:10
+ *  07/30/2014 15:22:45
  * 
  */
 @SuppressWarnings("unchecked")
@@ -32,6 +32,10 @@ public class Invent_mbDB
         } else {
             return rtn.get(0);
         }
+    }
+
+    public List<com.invent_mbdb.data.Users> user_x_id(Integer userid, PagingOptions pagingOptions) {
+        return ((List<com.invent_mbdb.data.Users> ) dsMgr.invoke(taskMgr.getQueryTask(), (Invent_mbDBConstants.user_x_idQueryName), userid, pagingOptions));
     }
 
     public Object insert(Object o) {

@@ -7,6 +7,14 @@
 			"type": "java.lang.Integer"
 		}],
 		"returnType": "com.invent_mbdb.data.Users"
+	}, {
+		"name": "user_x_id",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "userid",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.invent_mbdb.data.Users]"
 	}],
 	"serviceType": "JSON-RPC",
 	"serviceURL": "invent_mbDB.json"

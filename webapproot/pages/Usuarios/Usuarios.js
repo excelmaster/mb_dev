@@ -16,5 +16,8 @@ dojo.declare("Usuarios", wm.Page, {
     usersDojoGridPrinombreFormat: function( inValue, rowId, cellId, cellField, cellObj, rowObj) {
         
     },
-    _end: 0
+    panelCenterEnterKeyPress: function(inSender, inEvent) {
+		this.usersLiveForm1.
+	},
+	_end: 0
 });
